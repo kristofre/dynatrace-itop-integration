@@ -17,14 +17,3 @@ config.itop.restEndpoint = '/webservices/rest.php';
 config.itop.restVersion = '1.3';
 
 module.exports = config;
-
-/*module.exports = {
-    
-    config,
-
-    getApiUrl: function() {
-        console.log('URL:', config.dynatrace.tenant + '.' + config.dynatrace.host);
-        return config.dynatrace.tenant + '.' + config.dynatrace.host;
-    }
-    
-}*/

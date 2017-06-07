@@ -1,12 +1,12 @@
 {
-  "name": "cmdb-integration",
+  "name": "dynatrace-itop-integration",
   "version": "1.0.0",
   "description": "Dynatrace Integration with iTop",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Kristof Renders",
+  "author": "Kristof Renders, kristof.renders@dynatrace.com",
   "license": "ISC",
   "dependencies": {
     "cron": "^1.2.1"
