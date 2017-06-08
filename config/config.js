@@ -12,6 +12,7 @@ config.dynatrace.hostApi = '/api/' + config.dynatrace.apiVersion + '/entity/infr
 config.dynatrace.processGroupApi = '/api/' + config.dynatrace.apiVersion + '/entity/infrastructure/process-groups'
 
 config.itop.username = process.env.ITOPUSER || 'EMPTYITOPUSER';
+config.itop.password = process.env.ITOPPASS || 'EMPTYITOPUSER';
 config.itop.host = process.env.ITOPHOST || 'EMPTYITOPHOST';
 config.itop.port = process.env.ITOPPORT || 'EMPTYITOPPORT';
 config.itop.restEndpoint = '/webservices/rest.php';

@@ -23,19 +23,26 @@ module.exports = function performRequest(endpoint, method, success) {
   };
 
   var req = https.request(options, function(res) {
-    res.setEncoding('utf-8');
+    if (('' + res.statusCode).match(/^2\d\d$/)) {
+      // Request handled, happy
+      res.setEncoding('utf-8');
 
-    var responseString = '';
+      var responseString = '';
 
-    res.on('data', function(data) {
-      responseString += data;
-    });
+      res.on('data', function(data) {
+        responseString += data;
+      });
 
-    res.on('end', function() {
-      //console.log(responseString);
-      var responseObject = JSON.parse(responseString);
-      success(responseObject);
-    });
+      res.on('end', function() {
+        //console.log(res);
+        var responseObject = JSON.parse(responseString);
+
+        success(responseObject);
+      });
+    } else {
+      console.log('COULD NOT CONNECT TO DYNATRACE:', res.statusCode, res.statusMessage);
+    }
+    
   });
 
   req.write("");

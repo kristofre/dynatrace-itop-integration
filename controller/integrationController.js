@@ -1,6 +1,9 @@
 var dynatrace = require('./dynatraceController');
 var itop = require('./iTopController');
 
+var dtConnectivityOk = 0;
+var iTopConnectivityOk = 0;
+
 
 module.exports = {
     syncApplications: function() {
@@ -32,7 +35,7 @@ module.exports = {
                     
                     if(iTopHost.objects != null) {
                         //server already exists in iTop
-                        console.log('existing itop server: ', iTopHost.objects);
+                        //console.log('existing itop server: ', iTopHost.objects);
 
                         var newServerFields = {
                             name: dtHost.displayName,
@@ -41,7 +44,7 @@ module.exports = {
                         }
                         itop.updateServerByDynatraceId(dtHost.entityId, newServerFields, function (res) {
                             if(res.objects!=null) {
-                                console.log('ITOP SERVER UPDATED: ', res.objects);
+                                console.log('ITOP SERVER UPDATED: ', res);
                             }
                             else{
                                 console.log('ERROR WHILE UPDATING: ', res);
@@ -58,7 +61,7 @@ module.exports = {
                         }
                         itop.createServer(newServerFields, function (res) {
                             if(res.objects!=null) {
-                                console.log('ITOP SERVER CREATED: ', res.objects);
+                                console.log('ITOP SERVER CREATED: ', res);
                             }
                             else{
                                 console.log('ERROR WHILE CREATING: ', res);
@@ -68,5 +71,5 @@ module.exports = {
                 });
             });
         });
-    }
+    },
 };

@@ -15,8 +15,8 @@ module.exports = {
         };
 
         var params = {
-            auth_user: 'admin',
-            auth_pwd: 'trlab123!',
+            auth_user: config.itop.username,
+            auth_pwd: config.itop.password,
             json_data: JSON.stringify(jsondata)
         };
 
@@ -30,18 +30,31 @@ module.exports = {
 
         
         var req = http.request(options, function(res) {
+            //console.log(res);
+            if (('' + res.statusCode).match(/^2\d\d$/)) {
+            // Request handled, happy
             res.setEncoding('utf-8');
 
             var responseString = '';
 
             res.on('data', function(data) {
-            responseString += data;
+                responseString += data;
             });
 
             res.on('end', function() {
-            var responseObject = JSON.parse(responseString);
-            success(responseObject);
+                var responseObject = JSON.parse(responseString);
+                // code 0 means successful action
+                if(responseObject.code == '0'){
+                    success(responseObject);
+                }
+                else{
+                    console.log("ERROR RETURNED FROM ITOP: ", responseObject);
+                }
             });
+            } else {
+            console.log('COULD NOT CONNECT TO ITOP:', res.statusCode, res.statusMessage);
+            }
+            
         });
         req.write("");
         req.end();

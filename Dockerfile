@@ -1,11 +1,19 @@
-FROM node:alpine
+FROM node:boron
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 COPY package.json /usr/src/app/
-RUN NPM install
+RUN npm install
 
-COPY . /urs/src/app
+COPY . /usr/src/app
 
-CMD [ "npm", "start" ]
+ENV DTTENANT [YOURTENANTID]
+ENV DTAPITOKEN [YOURTOKEN]
+ENV ITOPHOST [YOURITOPHOST]
+ENV ITOPPORT [YOURITOPPORT]
+ENV ITOPUSER [YOURITOPUSER]
+ENV ITOPPASS [YOURITOPPASS]
+
+
+CMD ["node", "app.js"]
