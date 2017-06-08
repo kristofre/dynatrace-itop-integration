@@ -1,6 +1,6 @@
 var querystring = require('querystring');
 var http = require('http');
-var config = require('./config/config.js');
+var config = require('../config/config.js');
 
 
 

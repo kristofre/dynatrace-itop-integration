@@ -1,6 +1,6 @@
 var querystring = require('querystring');
 var https = require('https');
-var config = require('./config/config.js');
+var config = require('../config/config.js');
 
 function getHost()
 {

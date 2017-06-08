@@ -1,7 +1,7 @@
 var querystring = require('querystring');
 var https = require('https');
-var dynatraceApi = require('./dynatraceApiController');
-var integration = require('./integrationController');
+var dynatraceApi = require('./controller/dynatraceApiController');
+var integration = require('./controller/integrationController');
 
 var config = require('./config/config.js');
 var CronJob = require('cron').CronJob;
