@@ -7,6 +7,22 @@ module.exports = {
 
     },
 
+    syncProcessGroups: function() {
+        var processGroupsFromDynatrace = dynatrace.getProcessGroups(function(dtProcessGroups) {
+            dtProcessGroups.forEach (function (dtProcessGroup) {
+                console.log('DT FOUND PROCESS GROUP: ', dtProcessGroup);
+                var softwareTechs = dtProcessGroup.softwareTechnologies;
+                if(softwareTechs!=null) {
+                    softwareTechs.forEach(function (tech) {
+                        if(tech.type=='APACHE_HTTPD') {
+                            
+                        }
+                    });
+                } 
+            });
+        })
+    },
+
     syncServers: function() {
         var serversFromDynatrace = dynatrace.getHosts(function(dtHosts) {
             dtHosts.forEach (function (dtHost) {

@@ -4,6 +4,10 @@ var config = require('./config/config.js');
 
 module.exports = { 
     getHosts: function(success) {
-        dynatraceApi(config.dynatrace.hostApi, 'GET', success)
+        dynatraceApi(config.dynatrace.hostApi, 'GET', success);
     },
+
+    getProcessGroups: function(success) {
+        dynatraceApi(config.dynatrace.processGroupApi, 'GET', success);
+    }
 };

@@ -28,7 +28,8 @@ var apiVersion = 'v1';*/
   });
 }*/
 
-integration.syncServers();
+//integration.syncServers();
+integration.syncProcessGroups();
 
 /*function getApps() {
   dynatraceApi(config.dynatrace.applicationApi, 'GET', function(data) {

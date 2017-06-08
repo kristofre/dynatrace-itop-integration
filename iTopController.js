@@ -60,5 +60,14 @@ module.exports = {
             fields: fields
         };
         iTopApi.performRequest(jsondata, success);
+    },
+
+    getWebServerByHostAndTech: function(host, tech, success) {
+        var jsondata = {
+            operation: 'core/get',
+            class: 'Server',
+            key: 'SELECT Web Server WHERE description LIKE \"' + id + '\"'
+        };
+        iTopApi.performRequest(jsondata, success);
     }
 };

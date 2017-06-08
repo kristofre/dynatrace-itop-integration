@@ -9,6 +9,7 @@ config.dynatrace.host = process.env.DTHOST || 'live.dynatrace.com';
 config.dynatrace.applicationApi = '/api/' + config.dynatrace.apiVersion + '/entity/applications'
 config.dynatrace.servicesApi = '/api/' + config.dynatrace.apiVersion + '/entity/services'
 config.dynatrace.hostApi = '/api/' + config.dynatrace.apiVersion + '/entity/infrastructure/hosts'
+config.dynatrace.processGroupApi = '/api/' + config.dynatrace.apiVersion + '/entity/infrastructure/process-groups'
 
 config.itop.username = process.env.ITOPUSER || 'EMPTYITOPUSER';
 config.itop.host = process.env.ITOPHOST || 'EMPTYITOPHOST';
