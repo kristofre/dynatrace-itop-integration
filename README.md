@@ -8,3 +8,4 @@ Run as follows:
 
 DTTENANT=[tenant] DTAPITOKEN=[token] ITOPHOST=[itophost] ITOPPORT=[itopport] ITOPUSER=[username] ITOPPASS=[pass] node app.js
 
+Running with REPEATEVERY5=1 runs it as cron job every 5 mins
