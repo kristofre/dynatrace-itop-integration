@@ -1,0 +1,7 @@
+DTTENANT=[tenant]
+DTAPITOKEN=[token]
+ITOPHOST=[itophost]
+ITOPPORT=[itopport]
+ITOPUSER=[admin]
+ITOPPASS=[pass]!
+REPEATEVERY5=0
