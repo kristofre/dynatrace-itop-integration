@@ -5,8 +5,8 @@ Currently does the following:
 - create and update server CI in iTop based on Dynatrace Hosts
 
 Run as follows:
-
-DTTENANT=[tenant] DTAPITOKEN=[token] ITOPHOST=[itophost] ITOPPORT=[itopport] ITOPUSER=[username] ITOPPASS=[pass] node app.js
+For SaaS instance: DTTENANT=[tenant] DTAPITOKEN=[token] ITOPHOST=[itophost] ITOPPORT=[itopport] ITOPUSER=[username] ITOPPASS=[pass] node app.js
+For Managed instance: DTTENANT=[tenant] DTAPITOKEN=[token] DTMANAGED=1 DTHOST=[host] ITOPHOST=[itophost] ITOPPORT=[itopport] ITOPUSER=[username] ITOPPASS=[pass] node app.js
 
 Running with REPEATEVERY5=1 runs it as cron job every 5 mins
 

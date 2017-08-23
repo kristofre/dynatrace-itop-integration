@@ -1,5 +1,7 @@
 DTTENANT=[tenant]
 DTAPITOKEN=[token]
+DTHOST=[host]
+DTMANAGED=[1formanaged]
 ITOPHOST=[itophost]
 ITOPPORT=[itopport]
 ITOPUSER=[admin]

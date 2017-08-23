@@ -4,7 +4,20 @@ var config = require('../config/config.js');
 
 function getHost()
 {
-  return config.dynatrace.tenant + '.' + config.dynatrace.host;
+  if(config.dynatrace.isManaged=='1') {
+    return config.dynatrace.host;
+  }
+  else {
+    return config.dynatrace.tenant + '.' + config.dynatrace.host;
+  }
+}
+
+function getPath()
+{
+    if(config.dynatrace.isManaged=='1') {
+      return '/e/' + config.dynatrace.tenant;
+    }
+    return '';
 }
 
 module.exports = function performRequest(endpoint, method, success) {
@@ -17,13 +30,15 @@ module.exports = function performRequest(endpoint, method, success) {
 
   var options = {
     host: getHost(),
-    path: endpoint,
+    path: getPath() + endpoint,
     method: method,
     headers: headers
   };
 
   var req = https.request(options, function(res) {
+    //console.log(res);
     if (('' + res.statusCode).match(/^2\d\d$/)) {
+      
       // Request handled, happy
       res.setEncoding('utf-8');
 
