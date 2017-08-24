@@ -1,9 +1,0 @@
-DTTENANT=ee4b97fe-5357-438f-bc95-5cdad722e1b8
-DTAPITOKEN=Sf8HjDtYSuuym-4BRn8iN
-DTMANAGED=1
-DTHOST=agd182.dynatrace-managed.com
-ITOPHOST=dynatrace-perfclinic.westeurope.cloudapp.azure.com
-ITOPPORT=80
-ITOPUSER=admin
-ITOPPASS=admin
-REPEATEVERY5=1
