@@ -1,6 +1,7 @@
 var querystring = require('querystring');
 var https = require('https');
 var config = require('../config/config.js');
+var helper = require('../helper/helper.js');
 
 function getHost()
 {
@@ -55,7 +56,7 @@ module.exports = function performRequest(endpoint, method, success) {
         success(responseObject);
       });
     } else {
-      console.log('COULD NOT CONNECT TO DYNATRACE:', res.statusCode, res.statusMessage);
+      helper.printlog('Could not connect to Dynatrace: ' + res.statusCode + res.statusMessage);
     }
     
   });

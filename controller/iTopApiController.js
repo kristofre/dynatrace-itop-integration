@@ -1,7 +1,7 @@
 var querystring = require('querystring');
 var http = require('http');
 var config = require('../config/config.js');
-
+var helper = require('../helper/helper.js');
 
 
 module.exports = {
@@ -48,11 +48,11 @@ module.exports = {
                     success(responseObject);
                 }
                 else{
-                    console.log("ERROR RETURNED FROM ITOP: ", responseObject);
+                    helper.printlog("Error returned from iTop: " + responseObject);
                 }
             });
             } else {
-            console.log('COULD NOT CONNECT TO ITOP:', res.statusCode, res.statusMessage);
+            helper.printlog('Could not connect to iTop: ' + res.statusCode + res.statusMessage);
             }
             
         });

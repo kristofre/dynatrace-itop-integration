@@ -7,6 +7,6 @@ module.exports = {
 };
 
 function getTimeStamp(date){
-    if(date) return moment(date).format('YYYYMMDD HH:MM:SS');
-    else return moment(new Date()).format('YYYYMMDD HH:MM:SS');
+    if(date) return moment(date).format('YYYYMMDD HH:mm:ss');
+    else return moment(new Date()).format('YYYYMMDD HH:mm:ss');
 }

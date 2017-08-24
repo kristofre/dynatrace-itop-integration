@@ -48,10 +48,10 @@ module.exports = {
                         }
                         itop.updateServerByDynatraceId(dtHost.entityId, newServerFields, function (res) {
                             if (res.objects != null) {
-                                console.log('ITOP SERVER UPDATED: ', res.objects.Server);
-                                helper.printlog('iTop Server Updated: ')
+                                //console.log('ITOP SERVER UPDATED: ', res.objects);
+                                helper.printlog('iTop Server Updated: ' + dtHost.entityId + ' - ' + dtHost.displayName + ' - ' + dtHost.ipAddresses[0])
                             } else {
-                                console.log('ERROR WHILE UPDATING: ', res);
+                                helper.printlog('Error while updating iTop entity: ' + dtHost.entityId);
                             }
                         })
                     } else {
@@ -66,9 +66,9 @@ module.exports = {
                         }
                         itop.createServer(newServerFields, function (res) {
                             if (res.objects != null) {
-                                console.log('ITOP SERVER CREATED: ', res.objects);
+                                helper.printlog('iTop Server Created: ' + dtHost.entityId + ' - ' + dtHost.displayName + ' - ' + dtHost.ipAddresses[0])
                             } else {
-                                console.log('ERROR WHILE CREATING: ', res);
+                                helper.printlog('Error while creating entity in iTop: ' + dtHost.entityId);
                             }
                         })
                     }
